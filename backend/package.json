@@ -4,9 +4,26 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d dist --source-maps",
+    "start": "nodemon src/index.js --exec babel-node",
+    "serve": "node dist/index.js",
+    "clean": "rimraf dist"
   },
   "keywords": [],
   "author": "lucotmo <lucotmo@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.7.7",
+    "@babel/core": "^7.7.7",
+    "@babel/node": "^7.7.7",
+    "@babel/preset-env": "^7.7.7",
+    "nodemon": "^2.0.2",
+    "rimraf": "^3.0.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.5.8",
+    "graphql-tools": "^4.0.6"
+  }
 }
